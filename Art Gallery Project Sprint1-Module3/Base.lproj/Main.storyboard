@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="27R-la-RJx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lambda Gallery-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Lambda Gallery" id="BYZ-38-t0r" customClass="PaintingViewController" customModule="Art_Gallery_Project_Sprint1_Module3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iDj-hU-13o">
+                                <rect key="frame" x="20" y="64" width="335" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="mrp-w8-4f8" customClass="PaintingTableViewCell" customModule="Art_Gallery_Project_Sprint1_Module3" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mrp-w8-4f8" id="vaH-Gm-YaI">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yrO-Lq-Ll7">
+                                                    <rect key="frame" x="20" y="0.0" width="295" height="43.5"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u2k-Sf-8NC">
+                                                            <rect key="frame" x="0.0" y="0.0" width="295" height="0.0"/>
+                                                            <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="295" id="Nee-bQ-2Lx"/>
+                                                                <constraint firstAttribute="height" constant="265" id="g9B-he-jgv"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfd-pF-3n7">
+                                                            <rect key="frame" x="0.0" y="20" width="295" height="23.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <connections>
+                                                                <action selector="toggleAppreciation:" destination="mrp-w8-4f8" eventType="touchUpInside" id="25M-vu-9jv"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="Bfd-pF-3n7" secondAttribute="bottom" id="5HE-F2-ExG"/>
+                                                        <constraint firstItem="u2k-Sf-8NC" firstAttribute="top" secondItem="yrO-Lq-Ll7" secondAttribute="top" id="LAx-Vf-Q7r"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="yrO-Lq-Ll7" secondAttribute="trailing" constant="20" id="1YH-tE-CwM"/>
+                                                <constraint firstItem="yrO-Lq-Ll7" firstAttribute="leading" secondItem="vaH-Gm-YaI" secondAttribute="leading" constant="20" id="1do-nm-K7w"/>
+                                                <constraint firstItem="yrO-Lq-Ll7" firstAttribute="top" secondItem="vaH-Gm-YaI" secondAttribute="top" id="oHt-ud-Kry"/>
+                                                <constraint firstAttribute="bottom" secondItem="yrO-Lq-Ll7" secondAttribute="bottom" id="q9f-gn-DAG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="likeButton" destination="Bfd-pF-3n7" id="3c9-wU-dza"/>
+                                            <outlet property="portraitView" destination="u2k-Sf-8NC" id="W6v-1c-0Xy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dtm-vE-vOI" id="MLC-cU-8qT"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iDj-hU-13o" secondAttribute="bottom" id="Fv9-mU-dKh"/>
+                            <constraint firstItem="iDj-hU-13o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JuB-77-F5s"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iDj-hU-13o" secondAttribute="trailing" constant="20" id="jNM-5g-AsL"/>
+                            <constraint firstItem="iDj-hU-13o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="scn-1n-7iu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Lambda Gallery" id="YL2-oY-hQG"/>
+                    <connections>
+                        <outlet property="tableView" destination="iDj-hU-13o" id="M2U-KE-3xh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="dtm-vE-vOI" customClass="PaintingModel" customModule="Art_Gallery_Project_Sprint1_Module3" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="802" y="-672"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="X8y-gR-aCZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="27R-la-RJx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lNy-P5-Lux">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="OMi-Mx-ee6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eNh-7b-Eb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61.600000000000001" y="-671.51424287856082"/>
+        </scene>
+    </scenes>
+</document>
